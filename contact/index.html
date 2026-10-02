@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Alpaslan Ozbas</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../projects/">Projects</a>
+      <a href="./" aria-current="page">Contact</a>
+      <a href="../resume/">Resume</a>
+      <a href="https://github.com/aozbas" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+    <main>
+      <h1>Contact</h1>
+      <p>This form opens your email app. Review and send the draft there.</p>
+      <form action="mailto:aozbas@ucsd.edu" method="POST" enctype="text/plain">
+        <p>
+          <label>
+            Your email
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+        </p>
+        <p>
+          <label>
+            Subject
+            <input name="subject" required />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message
+            <textarea name="body" rows="6" cols="30" required></textarea>
+          </label>
+        </p>
+        <button type="submit">Open email draft</button>
+      </form>
+    </main>
+  </body>
+</html>

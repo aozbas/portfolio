@@ -1,0 +1,30 @@
+body {
+  /* Font baseline from https://dsc106.com/labs/lab01/#step-5-add-a-css-stylesheet */
+  /* Use the device's interface font with comfortable line spacing. */
+  font: 100%/1.5 system-ui;
+
+  /* Limit line length on large screens and leave space on small ones. */
+  max-width: 65ch;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.portrait {
+  display: block;
+  width: 22rem;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+}
