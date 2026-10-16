@@ -1,9 +1,10 @@
-/* Layout techniques adapted from https://dsc106.com/labs/lab02/. */
+/* Adapted from https://dsc106.com/labs/lab02/ and https://dsc106.com/labs/lab03/. */
 :root {
-  --color-accent: oklch(42% 0.14 260);
-  --color-accent-light: oklch(96% 0.018 260);
-  --color-border: oklch(83% 0.015 260);
-  --color-muted: oklch(45% 0.025 260);
+  color-scheme: light dark;
+  --color-accent: light-dark(oklch(42% 0.14 260), oklch(78% 0.1 260));
+  --color-accent-light: color-mix(in oklch, var(--color-accent), canvas 92%);
+  --color-border: oklch(55% 0.04 260 / 50%);
+  --color-muted: light-dark(oklch(45% 0.025 260), oklch(76% 0.025 260));
   accent-color: var(--color-accent);
 }
 
@@ -14,10 +15,10 @@
 body {
   /* Font baseline from https://dsc106.com/labs/lab01/#step-5-add-a-css-stylesheet */
   font: 100%/1.5 system-ui;
-  color: oklch(25% 0.025 260);
-  background: white;
+  color: light-dark(oklch(25% 0.025 260), oklch(92% 0.015 260));
+  background: canvas;
   max-width: 100ch;
-  margin-block: 2rem 4rem;
+  margin-block: 4.5rem 4rem;
   margin-inline: auto;
   padding-inline: 1rem;
 }
@@ -105,8 +106,27 @@ main > p {
 
 input,
 textarea,
-button {
+button,
+select {
   font: inherit;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 80%;
+}
+
+.color-scheme select {
+  padding: 0.3em 0.5em;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  color: inherit;
+  background: canvas;
 }
 
 input,
@@ -117,7 +137,7 @@ textarea {
   border: 1px solid var(--color-border);
   border-radius: 0.25rem;
   color: inherit;
-  background: white;
+  background: canvas;
 }
 
 textarea {
@@ -143,13 +163,13 @@ form button {
   padding: 0.75em 1em;
   border: 1px solid var(--color-accent);
   border-radius: 0.25rem;
-  color: white;
+  color: light-dark(white, oklch(20% 0.025 260));
   background: var(--color-accent);
   cursor: pointer;
 }
 
 form button:hover {
-  background: oklch(34% 0.12 260);
+  background: light-dark(oklch(34% 0.12 260), oklch(85% 0.08 260));
 }
 
 .projects {
@@ -246,10 +266,6 @@ form button:hover {
 }
 
 @media (max-width: 35rem) {
-  body {
-    margin-top: 1rem;
-  }
-
   nav {
     margin-bottom: 2rem;
     font-size: 0.875rem;
