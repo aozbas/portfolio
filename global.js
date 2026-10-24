@@ -1,4 +1,4 @@
-// Adapted from https://dsc106.com/labs/lab03/.
+// Adapted from https://dsc106.com/labs/lab03/ and https://dsc106.com/labs/lab04/.
 const pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
@@ -74,3 +74,80 @@ select.addEventListener('input', (event) => {
     console.warn('Could not save the theme.', error);
   }
 });
+
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+    throw error;
+  }
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${encodeURIComponent(username)}`);
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!/^h[1-6]$/.test(headingLevel)) {
+    throw new Error('The heading level must be h1 through h6.');
+  }
+
+  containerElement.innerHTML = '';
+
+  if (projects.length === 0) {
+    containerElement.textContent = 'No projects to display yet.';
+    return;
+  }
+
+  for (const project of projects) {
+    const article = document.createElement('article');
+
+    if (project.placeholder) {
+      article.classList.add('project-placeholder');
+    }
+
+    article.innerHTML = `
+      <${headingLevel}></${headingLevel}>
+      <img alt="" width="640" height="400" />
+      <div><p></p></div>
+    `;
+
+    const heading = article.querySelector(headingLevel);
+
+    if (project.url) {
+      const link = document.createElement('a');
+      link.href = project.url;
+      link.textContent = project.title;
+      heading.append(link);
+    } else {
+      heading.textContent = project.title;
+    }
+
+    const image = article.querySelector('img');
+    image.src = new URL(project.image, import.meta.url).href;
+    image.alt = project.alt ?? '';
+
+    if (project.placeholder) {
+      image.loading = 'lazy';
+    }
+
+    const description = article.querySelector('p');
+    description.textContent = project.description;
+
+    if (project.tools) {
+      const tools = document.createElement('p');
+      tools.classList.add('project-tools');
+      tools.textContent = project.tools;
+      description.after(tools);
+    }
+
+    containerElement.append(article);
+  }
+}

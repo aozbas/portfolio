@@ -1,4 +1,4 @@
-/* Adapted from https://dsc106.com/labs/lab02/ and https://dsc106.com/labs/lab03/. */
+/* Adapted from https://dsc106.com/labs/lab02/, https://dsc106.com/labs/lab03/, and https://dsc106.com/labs/lab04/. */
 :root {
   color-scheme: light dark;
   --color-accent: light-dark(oklch(42% 0.14 260), oklch(78% 0.1 260));
@@ -172,6 +172,38 @@ form button:hover {
   background: light-dark(oklch(34% 0.12 260), oklch(85% 0.08 260));
 }
 
+.latest-projects,
+.github-profile {
+  margin-top: 3rem;
+}
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+#profile-stats dl > div {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+}
+
+#profile-stats dt {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+#profile-stats dd {
+  margin: 0.35rem 0 0;
+  font-size: 2rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr));
@@ -189,7 +221,8 @@ form button:hover {
   border-bottom: 1px solid var(--color-border);
 }
 
-.projects h2 {
+.projects h2,
+.projects h3 {
   margin: 0;
 }
 
@@ -266,6 +299,10 @@ form button:hover {
 }
 
 @media (max-width: 35rem) {
+  #profile-stats dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   nav {
     margin-bottom: 2rem;
     font-size: 0.875rem;

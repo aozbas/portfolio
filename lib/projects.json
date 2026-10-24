@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Climate-Related Disasters",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "DSC 106 Project 2: A team report presenting opposing arguments about climate-related disaster frequency. It examines aggregation, time windows, and chart framing, with a discussion of ethical tradeoffs.",
+    "url": "https://aozbas.github.io/climate-disasters-vis/",
+    "tools": "Data source: IMF Climate Change Indicators Dashboard."
+  },
+  {
+    "title": "Food Processing Across Grocery Categories",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "DSC 106 Project 1: A static visualization comparing GroceryDB processing-score distributions across food categories, including bread and ice cream/desserts, with a discussion of the design choices.",
+    "tools": "Methods and tools: Python, pandas, NumPy, and Matplotlib."
+  },
+  {
+    "title": "CLEAR",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "An educational mobile prototype exploring experimental skin-lesion image classification. It connects an Expo app to a FastAPI service and includes image upload validation and model evaluation.",
+    "url": "https://github.com/aozbas/CLEAR",
+    "tools": "Technologies: Python, PyTorch, FastAPI, TypeScript, React Native, and Expo."
+  },
+  {
+    "title": "Reading Motion in the Wild",
+    "year": 2026,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "A report exploring activity recognition from phone and smartwatch sensor data in UCSD's ExtraSensory dataset. It covers missing data, compares classification models, and presents interactive visualizations.",
+    "url": "https://github.com/aozbas/extrasensory-activity-recognition",
+    "tools": "Methods and tools: logistic regression, ExtraTrees, scikit-learn, and Plotly."
+  },
+  {
+    "title": "GDP Nowcasting for the Turkish Economy",
+    "year": 2025,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "A Stata analysis that combines electricity consumption, bank credit, and card spending into a weekly economic index, then relates that index to quarterly Turkish GDP.",
+    "url": "https://github.com/aozbas/gdp-nowcasting-turkey",
+    "tools": "Methods and tools: Stata, principal component analysis, and ordinary least squares regression."
+  },
+  {
+    "title": "Placeholder project 06",
+    "year": 2024,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "Placeholder for a future portfolio entry; the year is sample data.",
+    "placeholder": true
+  },
+  {
+    "title": "Placeholder project 07",
+    "year": 2025,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "Placeholder for a future portfolio entry; the year is sample data.",
+    "placeholder": true
+  },
+  {
+    "title": "Placeholder project 08",
+    "year": 2024,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "Placeholder for a future portfolio entry; the year is sample data.",
+    "placeholder": true
+  },
+  {
+    "title": "Placeholder project 09",
+    "year": 2025,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "Placeholder for a future portfolio entry; the year is sample data.",
+    "placeholder": true
+  },
+  {
+    "title": "Placeholder project 10",
+    "year": 2024,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "Placeholder for a future portfolio entry; the year is sample data.",
+    "placeholder": true
+  },
+  {
+    "title": "Placeholder project 11",
+    "year": 2025,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "Placeholder for a future portfolio entry; the year is sample data.",
+    "placeholder": true
+  },
+  {
+    "title": "Placeholder project 12",
+    "year": 2024,
+    "image": "images/project-placeholder.svg",
+    "alt": "",
+    "description": "Placeholder for a future portfolio entry; the year is sample data.",
+    "placeholder": true
+  }
+]
