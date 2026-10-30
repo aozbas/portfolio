@@ -1,4 +1,4 @@
-// Adapted from https://dsc106.com/labs/lab03/ and https://dsc106.com/labs/lab04/.
+// Adapted from https://dsc106.com/labs/lab03/, https://dsc106.com/labs/lab04/, and https://dsc106.com/labs/lab05/.
 const pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
@@ -141,11 +141,19 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const description = article.querySelector('p');
     description.textContent = project.description;
 
+    const year = document.createElement('p');
+    year.classList.add('project-year');
+    const time = document.createElement('time');
+    time.dateTime = String(project.year);
+    time.textContent = project.year;
+    year.append(time);
+    description.after(year);
+
     if (project.tools) {
       const tools = document.createElement('p');
       tools.classList.add('project-tools');
       tools.textContent = project.tools;
-      description.after(tools);
+      year.after(tools);
     }
 
     containerElement.append(article);
