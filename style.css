@@ -322,7 +322,7 @@ form button:hover {
 }
 
 .legend button,
-.clear-year {
+.clear-filter {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -341,7 +341,7 @@ form button:hover {
 }
 
 .legend button:hover,
-.clear-year:enabled:hover,
+.clear-filter:enabled:hover,
 .legend .selected button {
   background: var(--color-accent-light);
   border-color: var(--color-accent);
@@ -377,7 +377,7 @@ form button:hover {
   font-weight: 650;
 }
 
-.clear-year:disabled {
+.clear-filter:disabled {
   opacity: 0.5;
   cursor: default;
 }
@@ -459,8 +459,13 @@ form button:hover {
   }
 
   nav {
+    flex-wrap: wrap;
     margin-bottom: 2rem;
     font-size: 0.875rem;
+  }
+
+  nav a {
+    flex-basis: 30%;
   }
 
   form {

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meta | Alpaslan Ozbas</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="meta.css" />
+    <script type="module" src="../global.js"></script>
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Meta</h1>
+      <p>Explore how this portfolio was built. Each line of source code is attributed to the last commit that changed it. A commit appears here if at least one of its lines is still in the site.</p>
+      <p id="meta-status" role="status">Loading commit data…</p>
+      <div id="meta-analysis" hidden>
+        <section aria-labelledby="summary-heading">
+          <h2 id="summary-heading">Codebase summary</h2>
+          <div id="stats"></div>
+        </section>
+        <section class="commit-chart" aria-labelledby="chart-heading">
+          <h2 id="chart-heading">Commits by time of day</h2>
+          <p class="chart-guide">Each dot is one commit, plotted at its recorded local time. Its area shows how many lines it last changed. Hover or focus a dot for details, or open it to view the commit on GitHub.</p>
+          <div id="chart"></div>
+          <p class="chart-guide">Drag from empty space to select commits and see their languages. With a dot focused, press Space to select it or Escape to clear.</p>
+          <div class="selection-controls">
+            <p id="selection-count" role="status">No commits selected</p>
+            <button class="clear-filter" id="clear-selection" type="button" disabled>Clear selection</button>
+          </div>
+          <dl id="language-breakdown" aria-label="Lines by language in selected commits"></dl>
+        </section>
+      </div>
+    </main>
+    <dl id="commit-tooltip" class="info tooltip" hidden>
+      <dt>Commit</dt>
+      <dd><a id="commit-link" target="_blank" rel="noopener noreferrer"></a></dd>
+      <dt>Date</dt><dd id="commit-date"></dd>
+      <dt>Time</dt><dd id="commit-time"></dd>
+      <dt>Author</dt><dd id="commit-author"></dd>
+      <dt>Lines edited</dt><dd id="commit-lines"></dd>
+    </dl>
+  </body>
+</html>

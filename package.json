@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "scripts": {
+    "stats": "elocuent -i \"{*.{html,css,js},{contact,meta,projects,resume}/*.{html,css,js}}\" -o meta/loc.csv --spaces 2"
+  },
+  "devDependencies": {
+    "elocuent": "^0.0.4"
+  },
+  "overrides": {
+    "elocuent": {
+      "glob": "14.0.4"
+    }
+  }
+}

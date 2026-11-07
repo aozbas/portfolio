@@ -1,0 +1,166 @@
+/* Scatterplot and tooltip styles adapted from https://dsc106.com/labs/lab06/. */
+#meta-analysis section {
+  margin-top: 2rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--color-border);
+}
+
+.stats > div {
+  min-width: 0;
+  padding: 0.85rem 1rem 0.85rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stats dt,
+.info dt,
+.chart-guide {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.stats dd {
+  margin: 0.25rem 0 0;
+  font-weight: 650;
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+
+.chart-guide {
+  max-width: 75ch;
+}
+
+#chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#chart .gridlines line {
+  stroke: var(--color-border);
+  stroke-opacity: 0.55;
+}
+
+#chart .gridlines .domain {
+  display: none;
+}
+
+#chart .gridlines .day line {
+  stroke: light-dark(#bc895c, #d8a87d);
+  stroke-opacity: 0.35;
+}
+
+#chart .gridlines .night line {
+  stroke: light-dark(#6583a6, #8da8cc);
+  stroke-opacity: 0.35;
+}
+
+.axis-title {
+  fill: currentColor;
+  font-size: 0.8rem;
+}
+
+#chart .tick text {
+  font-size: 11px;
+}
+
+.dots circle {
+  fill: var(--color-accent);
+  fill-opacity: 0.68;
+  stroke: canvas;
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 160ms, fill-opacity 160ms;
+  cursor: pointer;
+}
+
+.dots circle.selected {
+  fill: light-dark(#a32660, #ff97c8);
+  stroke: currentColor;
+  stroke-width: 2;
+  fill-opacity: 1;
+}
+
+.dots a:hover circle,
+.dots a:focus-visible circle {
+  fill-opacity: 1;
+  transform: scale(1.15);
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.brush .selection {
+  fill: var(--color-accent);
+  fill-opacity: 0.12;
+  stroke: var(--color-accent);
+  stroke-dasharray: 4 3;
+}
+
+.info,
+#language-breakdown > div {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.2rem 1rem;
+}
+
+.info dd,
+#language-breakdown dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 2;
+  max-width: calc(100vw - 1rem);
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+  color: canvastext;
+  background: canvas;
+  box-shadow: 0 0.25rem 1rem #0002;
+  font-size: 0.875rem;
+}
+
+.selection-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-block: 1rem;
+}
+
+#selection-count {
+  margin: 0;
+  font-weight: 650;
+}
+
+#language-breakdown {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+#language-breakdown > div {
+  grid-template-columns: 7rem auto;
+}
+
+@media (max-width: 35rem) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dots circle {
+    transition: none;
+  }
+}
