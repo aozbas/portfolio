@@ -1,5 +1,14 @@
 [
   {
+    "title": "Bikewatching",
+    "year": 2026,
+    "image": "images/bikewatching.jpg",
+    "alt": "Map of Boston and Cambridge with green bike lanes and Bluebikes stations drawn as circles colored by arrivals and departures at 8:30 AM.",
+    "description": "DSC 106 Lab 7: An interactive map of Bluebikes traffic in Boston and Cambridge during March 2024. Circle size shows station traffic, color shows whether trips mostly arrive or depart, and a slider filters by time of day.",
+    "url": "https://aozbas.github.io/boston-bike-flow/",
+    "tools": "Technologies: Mapbox GL JS, D3, HTML, CSS, and JavaScript."
+  },
+  {
     "title": "Climate-Related Disasters",
     "year": 2026,
     "image": "images/project-placeholder.svg",
